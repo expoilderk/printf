@@ -17,6 +17,11 @@ int	print_str(char *s)
 	int count;
 
 	count = 0;
+	if (s == NULL)
+	{
+		count += print_str("(null)");
+		return (count);
+	}
 	while (s[count])
 	{
 		write(1, &s[count], 1);
