@@ -20,6 +20,7 @@ int	print_nbr(int nb)
 	int				count;
 
 	size = 0;
+	count = 0;
 	temp = nb;
 	if (nb < 0)
 	{
