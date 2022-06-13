@@ -12,10 +12,6 @@
 
 #include "../includes/ft_printf.h"
 
-//Remover depois dos testes
-#include <string.h>
-#include <limits.h>
-
 int ft_printf(const char *format, ...)
 {
 	va_list args;
@@ -39,15 +35,4 @@ int ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
-}
-
-//Tests
-int main()
-{
-    int re;
-    //re = ft_printf("My ft_printf: \nInteiro | %d |\nString | %s |\nChar | %c |\nPorcent | %% |", 42, "Cadete", 'G');
-	re = ft_printf("%s", "teste");
-    printf("\nForam impressos %d caracteres\n", re);
-
-    return (0);
 }
