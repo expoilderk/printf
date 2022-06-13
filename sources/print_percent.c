@@ -15,6 +15,7 @@
 int	print_percent(char c)
 {
 	int count;
+	(void)c;
 
 	count = 0;
 	write(1, "%", 1);
