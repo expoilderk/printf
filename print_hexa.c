@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_percent.c                                    :+:      :+:    :+:   */
+/*   print_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/12 01:02:44 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/14 09:02:01 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/05/16 09:43:28 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/06/14 11:12:08 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_percent(char c)
+int	print_hexa(long long int nb, char *hex)
 {
-	int count;
-	(void)c;
+	char			arr[20];
+	long long int	temp;
+	int				size;
+	int				count;
 
+	size = 0;
 	count = 0;
-	write(1, "%", 1);
-	count += 1;
-
+	temp = nb;
+	if (nb < 0)
+	{
+		temp *= -1;
+		count += print_char('-');
+	}
+	if (nb == 0)
+		count += print_char(nb + 48);
+	while (temp > 0)
+	{
+		arr[size++] = hex[temp % 16];
+		temp /= 16;
+	}
+	count += print_str(arr);
 	return (count);
 }
