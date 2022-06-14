@@ -1,10 +1,8 @@
-INCLUDE = ./includes
+INCLUDE = ft_printf.h
 
-SRC = ./sources/*.c
+SRC = $(wildcard *.c)
 
-UTILS = ./utils/*.c
-
-OBJ = $(SRC:.c=.o) $(UTILS:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 AR = ar -rcs
 CFLAGS = -Wall -Werror -Wextra

@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_nbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 18:54:33 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/09 19:00:50 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/05/16 09:43:28 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/06/14 08:43:15 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+int	print_nbr(int nb)
 {
-	va_list args;
-	int count;
-	int index;
-	va_start(args, format);
+	char			arr[15];
+	unsigned int	temp;
+	int				size;
+	int				count;
 
+	size = 0;
 	count = 0;
-	index = 0;
-	while (format[index])
+	temp = nb;
+	if (nb < 0)
 	{
-		if (format[index] == '%')
-		{
-			index++;
-			if(is_args(format[index]))
-				count += scan_args(format[index], args);
-		}
-		else if (format[index])
-			count += print_char(format[index]);
-		index++;
+		temp *= -1;
+		count += print_char('-');
 	}
-	va_end(args);
+	if (nb == 0)
+		count += print_char(nb + 48);
+	while (temp > 0)
+	{
+		arr[size++] = temp % 10 + 48;
+		temp /= 10;
+	}
+	size--;
+	while (size >= 0)
+		count += print_char(arr[size--]);
 	return (count);
 }

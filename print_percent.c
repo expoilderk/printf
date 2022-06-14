@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   print_percent.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 11:14:11 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/11 23:45:31 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/06/12 01:02:44 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/06/14 08:45:13 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+int	print_percent(char c)
 {
-	size_t	num;
+	int count;
+	(void)c;
 
-	num = 0;
-	while (*str != '\0')
-	{
-		num++;
-		str++;
-	}
-	return (num);
+	count = 0;
+	write(1, "%", 1);
+	count += 1;
+
+	return (count);
 }

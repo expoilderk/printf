@@ -6,11 +6,11 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 01:07:06 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/12 01:11:53 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/14 08:47:27 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int scan_args(char format, va_list args)
 {

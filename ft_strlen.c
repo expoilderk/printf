@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/11 23:50:19 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/12 00:23:34 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/05/09 11:14:11 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/06/14 08:38:02 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
-int	print_str(char *s)
+size_t	ft_strlen(const char *str)
 {
-	int count;
+	size_t	num;
 
-	count = 0;
-	if (s == NULL)
+	num = 0;
+	while (*str != '\0')
 	{
-		count += print_str("(null)");
-		return (count);
+		num++;
+		str++;
 	}
-	while (s[count])
-	{
-		write(1, &s[count], 1);
-		count++;
-	}
-	return (count);
+	return (num);
 }

@@ -6,11 +6,11 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:59:11 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/12 01:05:37 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/14 08:38:21 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	print_char(char c)
 {
