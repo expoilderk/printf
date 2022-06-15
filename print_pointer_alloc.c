@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	print_pointer(unsigned long long ptr, char *base)
+int	print_pointer_alloc(unsigned long long ptr, char *base)
 {
 	char				*arr;
 	unsigned long long	temp;
