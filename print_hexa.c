@@ -6,34 +6,31 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:43:28 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/14 11:12:08 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/14 23:03:17 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_hexa(long long int nb, char *hex)
+int	print_hexa(unsigned int nb, char *base)
 {
 	char			arr[20];
-	long long int	temp;
+	unsigned int	temp;
 	int				size;
 	int				count;
 
 	size = 0;
 	count = 0;
-	temp = nb;
-	if (nb < 0)
-	{
-		temp *= -1;
-		count += print_char('-');
-	}
 	if (nb == 0)
-		count += print_char(nb + 48);
+		count += print_char('0');
+	temp = nb;
 	while (temp > 0)
 	{
-		arr[size++] = hex[temp % 16];
+		arr[size++] = base[temp % 16];
 		temp /= 16;
 	}
-	count += print_str(arr);
+	size--;
+	while (size >= 0)
+		count += print_char(arr[size--]);
 	return (count);
 }

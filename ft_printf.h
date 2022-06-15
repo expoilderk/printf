@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 22:36:56 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/14 10:54:52 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/14 23:04:00 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define HEX "0123456789abcdef"
+#define DECIMAL "0123456789"
+#define HEX_LOW "0123456789abcdef"
 #define HEX_UPPER "0123456789ABCDEF"
+
 
 int	ft_printf(const char *format, ...);
 
@@ -35,14 +37,15 @@ int	print_nbr(int nb);
 
 int	print_ui(unsigned int nb);
 
-int	print_hexa(long long int nb, char *hex);
+int	print_hexa(unsigned int nb, char *base);
 
-// print_hexa (maius/minus)
-
-// print_ui
+int	print_pointer(unsigned long long ptr, char *base);
 
 int	print_percent(char c);
 
+
+//Alternativa generica
+int	print_base(unsigned int nb, char format, char *base);
 
 
 size_t	ft_strlen(const char *str);

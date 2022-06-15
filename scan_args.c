@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 01:07:06 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/14 10:53:38 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/14 23:03:25 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ int scan_args(char format, va_list args)
 		else if (format == 'i' || format == 'd')
 			count += print_nbr(va_arg(args, int));
 		else if (format == 'u')
-			count += print_ui(va_arg(args, unsigned int));
-			//write(1, "unsiged int", 11);
+			count += print_base(va_arg(args, unsigned int), format, DECIMAL);
 		else if (format == 'p')
-			write(1, "pointer", 7);
+			count += print_pointer(va_arg(args, unsigned long long), HEX_LOW);
 		else if (format == 'x')
-			count += print_hexa(va_arg(args, long long int), HEX);
+			count += print_base(va_arg(args, unsigned int), format, HEX_LOW);
 		else if (format == 'X')
-			count += print_hexa(va_arg(args, long long int), HEX_UPPER);
+			count += print_base(va_arg(args, unsigned int), format, HEX_UPPER);
 		else if (format == '%')
 			count += print_percent(va_arg(args, int));
 	return (count);
