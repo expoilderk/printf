@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 22:36:56 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/14 23:04:00 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/15 08:15:18 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,14 @@ int	print_percent(char c);
 //Alternativa generica
 int	print_base(unsigned int nb, char format, char *base);
 
+//Usando alocação de memória
+int    print_hexa_alloc(unsigned int nb, char *base);
+int	print_pointer(unsigned long long ptr, char *base);
+int	print_ui_alloc(unsigned int nb);
 
-size_t	ft_strlen(const char *str);
+
+//Utils
+void *allocate(unsigned int nb, int base);
 
 
 #endif // FT_PRINTF_H

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_pointer.c                                    :+:      :+:    :+:   */
+/*   print_pointer_alloc.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 22:14:25 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/15 08:14:22 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/15 08:12:36 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_pointer(unsigned long long ptr, char *base)
 {
-	char				arr[20];
+	char				*arr;
 	unsigned long long	temp;
 	int					size;
 	int					count;
@@ -25,6 +25,7 @@ int	print_pointer(unsigned long long ptr, char *base)
 	count += print_str("0x");
 	if (ptr == 0)
 		count += print_str("0");
+	arr = allocate(ptr, 16);
 	temp = ptr;
 	while (temp > 0)
 	{
@@ -34,5 +35,6 @@ int	print_pointer(unsigned long long ptr, char *base)
 	size--;
 	while (size >= 0)
 		count += print_char(arr[size--]);
+	free(arr);
 	return (count);
 }

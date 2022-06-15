@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 01:07:06 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/14 23:03:25 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/15 07:36:01 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int scan_args(char format, va_list args)
 		else if (format == 'p')
 			count += print_pointer(va_arg(args, unsigned long long), HEX_LOW);
 		else if (format == 'x')
-			count += print_base(va_arg(args, unsigned int), format, HEX_LOW);
+			count += print_hexa_alloc(va_arg(args, unsigned int), HEX_LOW);
 		else if (format == 'X')
 			count += print_base(va_arg(args, unsigned int), format, HEX_UPPER);
 		else if (format == '%')

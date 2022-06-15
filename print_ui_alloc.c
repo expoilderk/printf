@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_pointer.c                                    :+:      :+:    :+:   */
+/*   print_ui_alloc.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/14 22:14:25 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/15 08:14:22 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/05/16 09:43:28 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/06/15 08:15:09 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_pointer(unsigned long long ptr, char *base)
+int	print_ui_alloc(unsigned int nb)
 {
-	char				arr[20];
-	unsigned long long	temp;
-	int					size;
-	int					count;
+	char			*arr;
+	unsigned int	temp;
+	int				size;
+	int				count;
 
 	size = 0;
 	count = 0;
-
-	count += print_str("0x");
-	if (ptr == 0)
-		count += print_str("0");
-	temp = ptr;
+	if (nb == 0)
+		count += print_char('0');
+	arr = allocate(nb, 10);
+	temp = nb;
 	while (temp > 0)
 	{
-		arr[size++] = base[temp % 16];
-		temp /= 16;
+		arr[size++] = temp % 10 + '0';
+		temp /= 10;
 	}
 	size--;
 	while (size >= 0)
 		count += print_char(arr[size--]);
+	free(arr);
 	return (count);
 }
