@@ -32,6 +32,6 @@ int scan_args(char format, va_list args)
 		else if (format == 'X')
 			count += print_hexa_itoa(va_arg(args, unsigned int), HEX_UPPER);
 		else if (format == '%')
-			count += print_percent(va_arg(args, int));
+			count += print_percent('%');
 	return (count);
 }
