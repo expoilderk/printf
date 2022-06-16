@@ -1,45 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_ui_alloc.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 18:54:33 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/15 23:17:00 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/05/16 09:43:28 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/06/15 08:15:09 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+int	print_ui_itoa(unsigned int nb, char *base)
 {
-	va_list args;
-	int count;
-	int index;
-	char *str;
+	char			*arr;
+	int				count;
 
 	count = 0;
-	index = 0;
-	str = ft_strdup(format);
-	if (!str)
-		return (0);
-
-	va_start(args, format);
-
-	while (str[index])
-	{
-		if (str[index] == '%')
-		{
-			index++;
-			if(is_args(str[index]))
-				count += scan_args(str[index], args);
-		}
-		else if (str[index])
-			count += print_char(str[index]);
-		index++;
-	}
-	va_end(args);
-	free((void *)str);
+	
+	arr = itoa_base(nb, base);
+	count += print_str(arr);
+	free(arr);
 	return (count);
 }
