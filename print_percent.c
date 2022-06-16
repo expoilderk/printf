@@ -12,14 +12,13 @@
 
 #include "ft_printf.h"
 
-int	print_percent(char c)
+int    print_percent(char c)
 {
-	int count;
-	(void)c;
+    int count;
 
-	count = 0;
-	write(1, "%", 1);
-	count += 1;
+    count = 0;
+    write(1, &c, 1);
+    count += 1;
 
-	return (count);
+    return (count);
 }
