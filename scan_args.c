@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 01:07:06 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/15 23:30:42 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/16 10:38:58 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int scan_args(char format, va_list args)
 		else if (format == 's')
 			count += print_str(va_arg(args, char *));
 		else if (format == 'i' || format == 'd')
-			count += print_nbr_itoa(va_arg(args, int), DECIMAL);
+			count += print_nbr_itoa(va_arg(args, int));
 		else if (format == 'u')
 			count += print_ui_itoa(va_arg(args, unsigned int), DECIMAL);
 		else if (format == 'p')

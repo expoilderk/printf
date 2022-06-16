@@ -1,32 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   itoa.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 11:32:32 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/15 23:17:34 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/05/20 12:51:11 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/06/16 09:02:48 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *s1)
+static size_t	ft_nbrlen(int n)
 {
-	char	*str;
-	char	*p;
-	int		len;
+	int	nlen;
 
-	len = 0;
-	while (s1[len])
-		len++;
-	str = malloc(len + 1);
+	nlen = 0;
+	if (n <= 0)
+		nlen++;
+	while (n != '\0')
+	{
+		nlen++;
+		n = n / 10;
+	}
+	return (nlen);
+}
+
+char	*ft_itoa(int n)
+{
+	int			nlen;
+	long int	nb;
+	char		*str;
+
+	nlen = ft_nbrlen(n);
+	nb = n;
+	str = malloc(sizeof(char) * nlen + 1);
 	if (!str)
 		return (0);
-	p = str;
-	while (*s1)
-		*p++ = *s1++;
-	*p = '\0';
+	if (nb < 0)
+	{
+		str[0] = '-';
+		nb = -nb;
+	}
+	else if (nb == 0)
+		str[0] = '0';
+	str[nlen--] = '\0';
+	while (nb)
+	{
+		str[nlen] = nb % 10 + '0';
+		nlen--;
+		nb = nb / 10;
+	}
 	return (str);
 }

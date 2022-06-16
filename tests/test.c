@@ -16,11 +16,11 @@ int main()
 //	printf("\nForam impressos %d caracteres\n", re);
 
 	printf("FUNÇÃO CRIADA\n");
-	re = ft_printf("%x", INT_MIN);
+	re = ft_printf("%d", INT_MIN);
     printf("\nForam impressos %d caracteres\n\n", re);
 
 	printf("FUNÇÃO ORIGINAL\n");
-	re = printf("%x", INT_MIN);
+	re = printf("%d", INT_MIN);
 	printf("\nForam impressos %d caracteres\n", re);
 
     return (0);

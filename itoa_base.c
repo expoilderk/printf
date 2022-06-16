@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 22:38:37 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/15 22:38:37 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/16 11:33:43 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
-	char    *zero;
+	unsigned char    *zero;
 	size_t	size_in_bytes;
 
 	if (count == 0 || size == 0)
@@ -27,8 +27,8 @@ static void	*ft_calloc(size_t count, size_t size)
 	p = malloc(size_in_bytes);
 	if (!p)
 		return (0);
-	zero = p;
-	while (size_in_bytes != 0)
+	zero = (unsigned char *)p;
+	while (size_in_bytes > 0)
 	{
 		*zero++ = 0;
 		size_in_bytes--;
@@ -36,26 +36,28 @@ static void	*ft_calloc(size_t count, size_t size)
 	return (p);
 }
 
-static size_t ft_nbrlen(unsigned long long nb, char *base)
+static size_t	ft_nbrlen(unsigned long long n, char *base)
 {
-	size_t				nlen;
-	unsigned long long	blen;
+	int	nlen;
+	int blen;
 
-	nlen = 1;
 	blen = ft_strlen(base);
-	while (nb >= blen)
-	{
-		nb = nb / blen;
+	nlen = 0;
+	if (n <= 0)
 		nlen++;
+	while (n != '\0')
+	{
+		nlen++;
+		n = n / blen;
 	}
 	return (nlen);
 }
 
 char	*itoa_base(unsigned long long nb, char *base)
-{
+{	
     char *str;
     int nlen;
-    unsigned long long blen;
+    int blen;
 
     blen = ft_strlen(base);
     nlen = ft_nbrlen(nb, base);

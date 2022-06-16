@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 22:36:56 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/15 23:12:50 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/16 11:42:15 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,27 +44,18 @@ int	print_pointer(unsigned long long ptr, char *base);
 int	print_percent(char c);
 
 
-//Alternativa generica para base 10 ou 16
-int	print_base(unsigned int nb, char format, char *base);
-
-
-//Usando minha função allocate
-int	print_pointer_alloc(unsigned long long ptr, char *base);
-int print_hexa_alloc(unsigned int nb, char *base);
-int	print_ui_alloc(unsigned int nb);
-
-
 //Usando minha função itoa_base
 int	print_pointer_itoa(unsigned long long ptr, char *base);
 int print_hexa_itoa(unsigned int nb, char *base);
 int	print_ui_itoa(unsigned int nb, char *base);
-int	print_nbr_itoa(int nb, char *base);
+int	print_nbr_itoa(int nb);
 
 
 //Utils
-void    *allocate(unsigned int nb, int base);
 size_t	ft_strlen(const char *str);
 char    *itoa_base(unsigned long long nb, char *base);
-char	*ft_strdup(const char *s1);
+char	*ft_itoa(int n);
+char	*ft_itoa_hexa(unsigned long long n, char *base);
+
 
 #endif // FT_PRINTF_H

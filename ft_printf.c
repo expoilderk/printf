@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 18:54:33 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/15 23:17:00 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/16 11:37:28 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,23 @@ int ft_printf(const char *format, ...)
 	va_list args;
 	int count;
 	int index;
-	char *str;
 
 	count = 0;
 	index = 0;
-	str = ft_strdup(format);
-	if (!str)
-		return (0);
-
 	va_start(args, format);
 
-	while (str[index])
+	while (format[index])
 	{
-		if (str[index] == '%')
+		if (format[index] == '%')
 		{
 			index++;
-			if(is_args(str[index]))
-				count += scan_args(str[index], args);
+			if(is_args(format[index]))
+				count += scan_args(format[index], args);
 		}
-		else if (str[index])
-			count += print_char(str[index]);
+		else if (format[index])
+			count += print_char(format[index]);
 		index++;
 	}
 	va_end(args);
-	free((void *)str);
 	return (count);
 }

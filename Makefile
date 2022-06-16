@@ -17,7 +17,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 test:
-	$(CC) $(SRC) ./tests/test.c -o test
+	$(CC) $(SRC) -g ./tests/test.c -o test
 
 clean:
 	$(RM) $(OBJ) test

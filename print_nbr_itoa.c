@@ -6,26 +6,19 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:43:28 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/16 00:16:56 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/16 11:30:35 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_nbr_itoa(int nb, char *base)
+int	print_nbr_itoa(int nb)
 {
 	char			*arr;
 	int				count;
 
 	count = 0;
-	/*if (nb < 0)
-	{
-		nb *= -1;
-		count += print_char('-');
-	}*/
-	if (nb < 0)
-		count += print_char('-');
-	arr = itoa_base(nb, base);
+	arr = ft_itoa(nb);
 	count += print_str(arr);
 	free(arr);
 	return (count);
