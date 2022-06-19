@@ -18,12 +18,15 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
+test:
+	$(CC) $(SRC) -g ./tests/test.c -o test
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) test
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test

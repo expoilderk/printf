@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 23:50:19 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/14 08:45:28 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/18 21:50:09 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_str(char *s)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (s == NULL)

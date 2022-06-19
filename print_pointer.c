@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 22:14:25 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/15 08:14:22 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/18 20:05:47 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	print_pointer(unsigned long long ptr, char *base)
 
 	size = 0;
 	count = 0;
-
 	count += print_str("0x");
 	if (ptr == 0)
 		count += print_str("0");

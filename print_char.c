@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:59:11 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/14 08:38:21 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/18 20:04:44 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int	print_char(char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	write(1, &c, 1);
 	count += 1;
-
 	return (count);
 }

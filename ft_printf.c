@@ -6,28 +6,27 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 18:54:33 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/16 11:37:28 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/18 21:49:42 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	va_list args;
-	int count;
-	int index;
+	va_list	args;
+	int		count;
+	int		index;
 
 	count = 0;
 	index = 0;
 	va_start(args, format);
-
 	while (format[index])
 	{
 		if (format[index] == '%')
 		{
 			index++;
-			if(is_args(format[index]))
+			if (is_args(format[index]))
 				count += scan_args(format[index], args);
 		}
 		else if (format[index])
