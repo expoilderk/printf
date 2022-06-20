@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:43:28 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/14 23:03:17 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:01:33 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_hexa(unsigned int nb, char *base)
 {
-	char			arr[20];
+	char			arr[15];
 	unsigned int	temp;
 	int				size;
 	int				count;

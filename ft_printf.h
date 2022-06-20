@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 22:36:56 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/06/18 20:13:00 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:03:31 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	print_ui(unsigned int nb);
 
 int	print_hexa(unsigned int nb, char *base);
 
-int	print_pointer(unsigned long long ptr, char *base);
+int	print_pointer(void *ptr, char *base);
 
 int	print_percent(char c);
 
