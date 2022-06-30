@@ -1,3 +1,1 @@
 My Printf implementation
-
-TESTE
